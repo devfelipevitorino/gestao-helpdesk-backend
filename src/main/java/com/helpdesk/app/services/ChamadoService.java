@@ -1,5 +1,6 @@
 package com.helpdesk.app.services;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,8 +54,12 @@ public class ChamadoService {
 		Cliente cliente = ClienteService.findById(obj.getCliente());
 		
 		Chamado chamado = new Chamado();
-		if(chamado.getId() != null) {
+		if(obj.getId() != null) {
 			chamado.setId(obj.getId());
+		}
+		
+		if(obj.getStatus().equals(2)) {
+			chamado.setDataFechamento(LocalDate.now());
 		}
 		
 		chamado.setTecnico(tecnico);
