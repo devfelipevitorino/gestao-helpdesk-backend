@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.helpdesk.app.DTO.TecnicoDTO;
@@ -25,6 +26,9 @@ public class TecnicoService {
 	@Autowired
 	private PessoaRepository pessoaRepository;
 	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+	
 	public Tecnico findById(Integer id) {
 		Optional<Tecnico> obj = repository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Técnico não encontado!"));
@@ -36,6 +40,7 @@ public class TecnicoService {
 	
 	public Tecnico create(TecnicoDTO obj) {
 		obj.setId(null);
+		obj.setSenha(encoder.encode(obj.getSenha()));
 		validaPorCpjEEmail(obj);
 		Tecnico newObj = new Tecnico(obj);
 		return repository.save(newObj);

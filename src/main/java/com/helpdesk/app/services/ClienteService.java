@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.helpdesk.app.DTO.ClienteDTO;
@@ -25,6 +26,9 @@ public class ClienteService {
 	@Autowired
 	private PessoaRepository pessoaRepository;
 	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+	
 	public Cliente findById(Integer id) {
 		Optional<Cliente> obj = repository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Cliente não encontado!"));
@@ -36,6 +40,7 @@ public class ClienteService {
 	
 	public Cliente create(ClienteDTO obj) {
 		obj.setId(null);
+		obj.setSenha(encoder.encode(obj.getSenha()));
 		validaPorCpjEEmail(obj);
 		Cliente newObj = new Cliente(obj);
 		return repository.save(newObj);
