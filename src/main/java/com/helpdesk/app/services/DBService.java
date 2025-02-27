@@ -25,7 +25,11 @@ public class DBService {
 		
 		Tecnico t1 = new Tecnico(null, "admin", "77426482022", "admin@gmail.com", encoder.encode("123456")); t1.addPerfil(Perfil.ADMIN);
 		
-		tecnicoRepository.saveAll(Arrays.asList(t1));
+		Tecnico t2 = new Tecnico(null, "Felipe", "13017727475", "felipe@gmail.com", encoder.encode("123456")); t1.addPerfil(Perfil.ADMIN);
+		
+		Tecnico t3 = new Tecnico(null, "tecnico", "14856342452", "tecnico@gmail.com", encoder.encode("123456")); t1.addPerfil(Perfil.TECNICO);
+
+		tecnicoRepository.saveAll(Arrays.asList(t1,t2, t3));
 		
 	}
 	
