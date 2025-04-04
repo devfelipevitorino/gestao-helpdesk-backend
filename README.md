@@ -1,22 +1,45 @@
-# 🎟️ Sistema de Gestão de Help Desk  
+# 🎟️ Backend - Sistema de Gestão de Help Desk  
 
 ![Badge em Desenvolvimento](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
 ![Java](https://img.shields.io/badge/Java-11-blue)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7.18-green)
 
 ## 🚀 Sobre o Projeto  
-Um sistema de help desk para facilitar o atendimento técnico e o gerenciamento de ocorrências.  
-Com ele, você pode:  
-- 🔍 Buscar clientes rapidamente  
-- 🔄 Transferir ocorrências para colegas experientes  
-- 📊 Visualizar métricas em tempo real  
-- 🔑 Acessar com segurança usando login  
+Este é o backend do **Sistema de Gestão de Help Desk**, desenvolvido para gerenciar ocorrências e atendimentos técnicos de forma eficiente.  
+
+Principais funcionalidades:  
+- 🏢 Gestão de clientes e chamados  
+- 🔐 Autenticação e controle de acesso  
+- 📊 API REST para comunicação com o frontend  
+
+---
+
+## 🖥️ Imagens do Sistema  
+
+<details>
+  <summary>📸 Clique para visualizar as imagens do backend</summary>
+
+  ### 🔑 Tela de Login  
+  ![Tela de Login](https://github.com/user-attachments/assets/385be445-e6e2-4939-b621-59316621264f)
+
+  ### 👨‍💻 Listagem de Técnicos  
+  ![Listagem de Técnicos](https://github.com/user-attachments/assets/8233d1a0-e145-4446-a7df-accace361af7)
+
+  ### 📋 Listagem de Chamados  
+  ![Listagem de Chamados](https://github.com/user-attachments/assets/04135ccd-3b92-4408-8e6d-60a457d789db)
+
+  ### 🆕 Criar Chamado  
+  ![Criar Chamado](https://github.com/user-attachments/assets/61db71b8-3bad-4f6d-9257-501c6c2fbfa8)
+
+</details>
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas  
-- **Backend:** Java 11 com Spring Boot 2.7.18  
-- **Frontend:** Angular  
+- **Linguagem:** Java 11  
+- **Framework:** Spring Boot 2.7.18  
 - **Banco de Dados:** SQL  
+- **Segurança:** Spring Security (autenticação)  
 
 ---
 
